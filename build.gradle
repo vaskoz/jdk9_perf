@@ -2,6 +2,20 @@ apply plugin: 'java'
 apply plugin: 'idea'
 //apply plugin: 'jacoco'
 
+buildscript {
+  repositories {
+    jcenter()
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "me.champeau.gradle:jmh-gradle-plugin:0.4.7"
+  }
+}
+
+apply plugin: "me.champeau.gradle.jmh"
+
 repositories {
     jcenter()
 }
@@ -14,6 +28,6 @@ sourceCompatibility = 1.11
 
 def jmhVersion = "1.21"
 dependencies {
-    compile("org.openjdk.jmh:jmh-core:${jmhVersion}")
-    compileOnly("org.openjdk.jmh:jmh-generator-annprocess:${jmhVersion}")
+	compile("org.openjdk.jmh:jmh-core:${jmhVersion}")
+	compileOnly("org.openjdk.jmh:jmh-generator-annprocess:${jmhVersion}")
 }
