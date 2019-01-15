@@ -24,7 +24,7 @@ repositories {
     //toolVersion = "0.8.2"
 //}
 
-sourceCompatibility = 1.11
+sourceCompatibility = 1.12
 
 def jmhVersion = "1.21"
 dependencies {
